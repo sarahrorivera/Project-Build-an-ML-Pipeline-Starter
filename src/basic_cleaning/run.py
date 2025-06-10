@@ -54,21 +54,21 @@ if __name__ == "__main__":
     parser.add_argument(
         "--input_artifact", 
         type = str, ## INSERT TYPE HERE: str, float or int,
-        help = "name for input artifact in WB" ## INSERT DESCRIPTION HERE,
+        help = "the input artifact" ## INSERT DESCRIPTION HERE,
         required = True
     )
 
     parser.add_argument(
         "--output_artifact", 
         type = str, ## INSERT TYPE HERE: str, float or int,
-        help = "name for cleaned output to log to wb" ## INSERT DESCRIPTION HERE,
+        help = "the name for the output artifact" ## INSERT DESCRIPTION HERE,
         required = True
     )
 
     parser.add_argument(
         "--output_type", 
         type = str,  ## INSERT TYPE HERE: str, float or int,
-        help = "type of the artifact" ## INSERT DESCRIPTION HERE,
+        help = " the type for the output artifact" ## INSERT DESCRIPTION HERE,
         required = True
     )
 
@@ -82,14 +82,14 @@ if __name__ == "__main__":
     parser.add_argument(
         "--min_price", 
         type = float, ## INSERT TYPE HERE: str, float or int,
-        help = "minim price to include" ## INSERT DESCRIPTION HERE,
+        help = "the minimum price to consider" ## INSERT DESCRIPTION HERE,
         required = True
     )
 
     parser.add_argument(
         "--max_price",
         type = float, ## INSERT TYPE HERE: str, float or int,
-        help = "maximum price to include" ## INSERT DESCRIPTION HERE,
+        help = "the maximum price to consider" ## INSERT DESCRIPTION HERE,
         required = True
     )
 
