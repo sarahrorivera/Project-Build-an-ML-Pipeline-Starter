@@ -53,43 +53,73 @@ if __name__ == "__main__":
   
     parser.add_argument(
         "--input_artifact", 
+<<<<<<< HEAD
         type =str,  ## INSERT TYPE HERE: str, float or int,
         help = "the input artifact", ## INSERT DESCRIPTION HERE,
+=======
+        type = str, ## INSERT TYPE HERE: str, float or int,
+        help = "the input artifact" ## INSERT DESCRIPTION HERE,
+>>>>>>> 59fba3e96656fb0ff93fbc061e4e67322d4da58f
         required = True
     )
 
     parser.add_argument(
         "--output_artifact", 
+<<<<<<< HEAD
         type =str, ## INSERT TYPE HERE: str, float or int,
         help = "the name for the output artifact", ## INSERT DESCRIPTION HERE,
+=======
+        type = str, ## INSERT TYPE HERE: str, float or int,
+        help = "the name for the output artifact" ## INSERT DESCRIPTION HERE,
+>>>>>>> 59fba3e96656fb0ff93fbc061e4e67322d4da58f
         required = True
     )
 
     parser.add_argument(
         "--output_type", 
+<<<<<<< HEAD
         type =str,  ## INSERT TYPE HERE: str, float or int,
         help = "the type for the output artifact", ## INSERT DESCRIPTION HERE,
+=======
+        type = str,  ## INSERT TYPE HERE: str, float or int,
+        help = " the type for the output artifact" ## INSERT DESCRIPTION HERE,
+>>>>>>> 59fba3e96656fb0ff93fbc061e4e67322d4da58f
         required = True
     )
 
     parser.add_argument(
         "--output_description", 
+<<<<<<< HEAD
         type =str, ## INSERT TYPE HERE: str, float or int,
         help = "a description of the output artifact", ## INSERT DESCRIPTION HERE,
+=======
+        type = str, ## INSERT TYPE HERE: str, float or int,
+        help = "description for output artifact" ## INSERT DESCRIPTION HERE,
+>>>>>>> 59fba3e96656fb0ff93fbc061e4e67322d4da58f
         required = True
     )
 
     parser.add_argument(
         "--min_price", 
+<<<<<<< HEAD
         type =float, ## INSERT TYPE HERE: str, float or int,
         help = "the minimum price to consider", ## INSERT DESCRIPTION HERE,
+=======
+        type = float, ## INSERT TYPE HERE: str, float or int,
+        help = "the minimum price to consider" ## INSERT DESCRIPTION HERE,
+>>>>>>> 59fba3e96656fb0ff93fbc061e4e67322d4da58f
         required = True
     )
 
     parser.add_argument(
         "--max_price",
+<<<<<<< HEAD
         type =float, ## INSERT TYPE HERE: str, float or int,
         help = "the maximum price to consider", ## INSERT DESCRIPTION HERE,
+=======
+        type = float, ## INSERT TYPE HERE: str, float or int,
+        help = "the maximum price to consider" ## INSERT DESCRIPTION HERE,
+>>>>>>> 59fba3e96656fb0ff93fbc061e4e67322d4da58f
         required = True
     ) 
 
