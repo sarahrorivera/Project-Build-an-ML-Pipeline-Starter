@@ -7,6 +7,8 @@ import wandb
 import hydra
 from omegaconf import DictConfig
 
+
+
 here = os.path.dirname(__file__)
 
 _steps = [
@@ -26,6 +28,8 @@ _steps = [
 @hydra.main(config_path=".", config_name="config", version_base="1.1")
 
 def go(config: DictConfig):
+    from omegaconf import OmegaConf
+    OmegaConf.set_struct(config, False)
 
     # Setup the wandb experiment. All runs will be grouped under this name
     os.environ["WANDB_PROJECT"] = config["main"]["project_name"]
