@@ -14,12 +14,10 @@ logger = logging.getLogger()
 # DO NOT MODIFY
 def go(args):
 
-    run = wandb.init(job_type="basic_cleaning")
+    run = wandb.init(project="nyc_airbnb", job_type="basic_cleaning", group="cleaning", save_code=True)
     run.config.update(args)
 
     # Download input artifact. This will also log that this script is using this
-    
-    run = wandb.init(project="nyc_airbnb", group="cleaning", save_code=True)
     artifact_local_path = run.use_artifact(args.input_artifact).file()
     df = pd.read_csv(artifact_local_path)
     # Drop outliers
@@ -30,8 +28,6 @@ def go(args):
     # Convert last_review to datetime
     df['last_review'] = pd.to_datetime(df['last_review'])
 
-    idx = df['longitude'].between(-74.25, -73.50) & df['latitude'].between(40.5, 41.2)
-    df = df[idx].copy()
     idx = df['longitude'].between(-74.25, -73.50) & df['latitude'].between(40.5, 41.2)
     df = df[idx].copy()
     # Save the cleaned file
@@ -55,73 +51,43 @@ if __name__ == "__main__":
   
     parser.add_argument(
         "--input_artifact", 
-<<<<<<< HEAD
         type =str,  ## INSERT TYPE HERE: str, float or int,
         help = "the input artifact", ## INSERT DESCRIPTION HERE,
-=======
-        type = str, ## INSERT TYPE HERE: str, float or int,
-        help = "the input artifact" ## INSERT DESCRIPTION HERE,
->>>>>>> 59fba3e96656fb0ff93fbc061e4e67322d4da58f
         required = True
     )
 
     parser.add_argument(
         "--output_artifact", 
-<<<<<<< HEAD
         type =str, ## INSERT TYPE HERE: str, float or int,
         help = "the name for the output artifact", ## INSERT DESCRIPTION HERE,
-=======
-        type = str, ## INSERT TYPE HERE: str, float or int,
-        help = "the name for the output artifact" ## INSERT DESCRIPTION HERE,
->>>>>>> 59fba3e96656fb0ff93fbc061e4e67322d4da58f
         required = True
     )
 
     parser.add_argument(
         "--output_type", 
-<<<<<<< HEAD
         type =str,  ## INSERT TYPE HERE: str, float or int,
         help = "the type for the output artifact", ## INSERT DESCRIPTION HERE,
-=======
-        type = str,  ## INSERT TYPE HERE: str, float or int,
-        help = " the type for the output artifact" ## INSERT DESCRIPTION HERE,
->>>>>>> 59fba3e96656fb0ff93fbc061e4e67322d4da58f
         required = True
     )
 
     parser.add_argument(
         "--output_description", 
-<<<<<<< HEAD
         type =str, ## INSERT TYPE HERE: str, float or int,
         help = "a description of the output artifact", ## INSERT DESCRIPTION HERE,
-=======
-        type = str, ## INSERT TYPE HERE: str, float or int,
-        help = "description for output artifact" ## INSERT DESCRIPTION HERE,
->>>>>>> 59fba3e96656fb0ff93fbc061e4e67322d4da58f
         required = True
     )
 
     parser.add_argument(
         "--min_price", 
-<<<<<<< HEAD
         type =float, ## INSERT TYPE HERE: str, float or int,
         help = "the minimum price to consider", ## INSERT DESCRIPTION HERE,
-=======
-        type = float, ## INSERT TYPE HERE: str, float or int,
-        help = "the minimum price to consider" ## INSERT DESCRIPTION HERE,
->>>>>>> 59fba3e96656fb0ff93fbc061e4e67322d4da58f
         required = True
     )
 
     parser.add_argument(
         "--max_price",
-<<<<<<< HEAD
         type =float, ## INSERT TYPE HERE: str, float or int,
         help = "the maximum price to consider", ## INSERT DESCRIPTION HERE,
-=======
-        type = float, ## INSERT TYPE HERE: str, float or int,
-        help = "the maximum price to consider" ## INSERT DESCRIPTION HERE,
->>>>>>> 59fba3e96656fb0ff93fbc061e4e67322d4da58f
         required = True
     ) 
 
