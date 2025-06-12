@@ -25,10 +25,12 @@ _steps = [
 
 
 # This automatically reads in the configuration
-@hydra.main(config_path=".", config_name="config", version_base="1.1")
+from omegaconf import OmegaConf
 
+@hydra.main(config_path=".", config_name="config", version_base="1.1")
 def go(config: DictConfig):
-    from omegaconf import OmegaConf
+    config = OmegaConf.to_container(config, resolve=True)
+    config = OmegaConf.create(config)
     OmegaConf.set_struct(config, False)
 
     # Setup the wandb experiment. All runs will be grouped under this name
